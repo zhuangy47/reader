@@ -1,0 +1,8 @@
+module reader {
+
+  array [1D] Reader {
+    entry Reader();
+    entry void readFile(int);
+  };
+
+};

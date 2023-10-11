@@ -1,0 +1,14 @@
+mainmodule main {
+
+  readonly CProxy_Main mainProxy;
+  readonly std::string filename;
+  readonly size_t numPartitions;
+  readonly size_t fileSize;
+  extern module reader;
+
+  mainchare Main {
+    entry Main(CkArgMsg* msg);
+    entry void done();
+  };
+
+};
