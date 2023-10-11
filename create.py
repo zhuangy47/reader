@@ -14,3 +14,6 @@ print(f'Writing file {filename} of size {filesize / (1024*1024*1024)}GB with dat
 with open(filename, 'wb') as f:
     for _ in range(filesize // len(data)):
         f.write(data)
+
+print("Done writing!")
+

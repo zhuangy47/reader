@@ -17,7 +17,7 @@ Reader::Reader(CkMigrateMessage *msg) { }
 void Reader ::readFile(int from) {
   size_t result;
   char * buffer;
-  std::string file_path = "./" + filename + std::to_string(thisIndex);
+  std::string file_path = "./testfilefolder" + std::to_string(thisIndex) + "/" + filename + std::to_string(thisIndex);
   size_t buffer_size = fileSize / numPartitions;
   // size_t buffer_size = 0;
   CkPrintf("File_path from %d, %s, reading %zu bytes\n", thisIndex, file_path.c_str(), buffer_size);
