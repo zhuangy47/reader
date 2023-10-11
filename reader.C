@@ -23,14 +23,14 @@ void Reader ::readFile(int from) {
   CkPrintf("File_path from %d, %s, reading %zu bytes\n", thisIndex, file_path.c_str(), buffer_size);
   FILE* fp = fopen(file_path.c_str(), "r");
   if (fp == NULL) {
-    CkPrintf("How did this happen??");
+    CkPrintf("File doesn't exist or something has gone terribly wrong.\n");
     CkExit();
   }
   fseek(fp , 0 , SEEK_SET);
   rewind(fp);
   buffer = (char*) malloc(sizeof(char) * buffer_size);
   if (buffer == NULL) {
-    CkPrintf("buffer is NULL, exiting");
+    CkPrintf("buffer is NULL, exiting\n");
     CkExit();
   }
   double read_time = CkWallTimer();
@@ -41,7 +41,7 @@ void Reader ::readFile(int from) {
   fclose(fp);
   free(buffer);
   if (result != buffer_size) {
-    CkPrintf("read failed, exiting");
+    CkPrintf("read failed, exiting\n");
     CkExit();
   }
   mainProxy.done();
