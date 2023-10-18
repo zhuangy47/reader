@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=128
 #SBATCH --output=reader-%j.out
@@ -10,5 +10,5 @@
 #SBATCH --constraint="scratch"
 
 echo "job is starting p, process cnt per node=4, node=2 on `hostname`"
-./charmrun +p1 ./reader 1 4294967296
+./charmrun +p4 ./reader 4 4294967296
 
